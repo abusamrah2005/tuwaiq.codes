@@ -1,0 +1,254 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head runat="server">
+    <title>تقييم</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/ffont-awesome.min.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
+    <script src="css/jquery.min.js"></script>
+    <script src="css/popper.min.js"></script>
+    <script src="css/bootstrap.min.js"></script>
+    <link href="css/ffont-awesome.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <%--<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap" rel="stylesheet">--%>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap" rel="stylesheet">
+    <%--    <link href="css/load.css" rel="stylesheet" />
+    <link href="css/owl-carousel.css" rel="stylesheet" />
+    <link href="css/templatemo-art-factory.css" rel="stylesheet" />--%>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        body {
+            /*font-family: 'Almarai', sans-serif;*/
+            font-family: 'Almarai', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        body {
+            height: 100vh;
+            text-align: center;
+        }
+        /*Trigger Button*/
+        .login-trigger {
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(to bottom right, #52A313, #52A313);
+            padding: 15px 30px;
+            border-radius: 30px;
+            position: relative;
+            top: 50%;
+        }
+
+        /*Modal*/
+        h4 {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .close {
+            color: #fff;
+            transform: scale(1.2)
+        }
+
+        .modal-content {
+            font-weight: bold;
+            background: linear-gradient(to bottom right,#F87E7B,#B05574);
+        }
+
+        .form-control {
+            margin: 1em 0;
+        }
+
+            .form-control:hover, .form-control:focus {
+                box-shadow: none;
+                border-color: #fff;
+            }
+
+        .username, .password {
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            border-bottom: 2px solid #eee;
+            padding-left: 0;
+            font-weight: normal;
+            background: transparent;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: #eee;
+        }
+
+        .form-control:focus::-webkit-input-placeholder {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .login {
+            padding: 6px 20px;
+            border-radius: 20px;
+            background: none;
+            border: 2px solid #FAB87F;
+            color: #FAB87F;
+            font-weight: bold;
+            transition: all .5s;
+            margin-top: 1em;
+        }
+
+            .login:hover {
+                background: #FAB87F;
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    <%-- load page --%>
+    <%--    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>--%>
+    <%-- load page --%>
+
+    <form id="form1" runat="server">
+        <div>
+            <%--  --%>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="homapage.aspx">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/img/images.png" Width="110px" Height="60px" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homapage.aspx">الرئيسيه <span class="sr-only">(current)</span></a>
+                        </li>
+                        <%--<li class="nav-item">
+                            <a class="nav-link" href="#">تعليمات</a>
+                        </li>--%>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">صفحات الموقع
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <%--<li><a class="dropdown-item" href="homapage.aspx">الرئيسيه</a></li>--%>
+                                <%-- <li><a class="dropdown-item" href="login.aspx">تسجيل الدخول</a></li>
+                                <li><a class="dropdown-item" href="AddStudint.aspx">إضافة طالب</a></li>--%>
+                                <%--<li><a class="dropdown-item" href="newstudent.aspx">تقييم</a></li>--%>
+                                <li><a class="dropdown-item" href="pollpage.aspx">التصويت</a></li>
+                                <li><a class="dropdown-item" href="results.aspx">نتيجة طالب</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">تواصل معنا</a>
+                        </li>
+                        <li>
+                            <asp:Button ID="loginbtn" runat="server" Text="تسجيل الدخول" OnClick="loginbtn_Click" CssClass="btn btn-success" />
+
+                        </li>
+                        <li>
+                            <asp:Button ID="logout" runat="server" Text="تسجيل الخروج" OnClick="logout_Click" CssClass="btn btn-danger" />
+
+                        </li>
+                        <li>
+                            <!--Trigger-->
+
+
+                            <div id="login" runat="server" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button data-dismiss="modal" class="close">&times;</button>
+                                            <h4>تسجيل الدخول</h4>
+
+                                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                                            <input type="password" name="password" class="password form-control" placeholder="password" />
+                                            <input class="btn login" type="submit" value="Login" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+
+                </div>
+            </nav>
+            <%--  --%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <a href='https://www.symptoma.ae/ar/info/covid-19#info'></a>
+        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=b40b90fbf3c214fc7bd704b0b77dda5b0dd9413b'></script>
+        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/817249/t/0"></script>
+
+        <div class="container card-body text-center">
+            <footer class="page-footer font-small special-color-dark pt-4">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/kanzalebda3" target="_blank" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+
+                <p style="background-color: lightgray">2021 Copyright© Mohammed Al Asmri </p>
+
+            </footer>
+        </div>
+
+        <%--  --%>
+    </form>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Core theme JS-->
+    <script src="Scripts/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <%--    <script src="Scripts/popper.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>--%>
+
+    <%--    <script src="Scripts/waypoints.min.js"></script>
+    <script src="Scripts/jquery.counterup.min.js"></script>
+    <script src="Scripts/imgfix.min.js"></script>--%>
+
+    <!-- Global Init -->
+
+    <%-- <script src="Scripts/owl-carousel.js"></script>
+    <script src="Scripts/scrollreveal.min.js"></script>
+    <script src="Scripts/custom.js"></script>--%>
+
+    <%--  --%>
+</body>
+</html>

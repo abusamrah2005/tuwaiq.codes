@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VotesInformation>
+  <Vote>
+    <Choice>Fast</Choice>
+  </Vote>
+  <Vote>
+    <Choice>Slow</Choice>
+  </Vote>
+  <Vote>
+    <Choice>Normal</Choice>
+  </Vote>
+</VotesInformation>
